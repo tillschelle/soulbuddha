@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Buddha – finest pop-rock cover · Rhein-Nahe</title>
+  <meta name="description" content="Soul Buddha – Tanz, Cover & Partyband aus dem Rhein-Nahe-Eck. Buchung: Gerhard Rösch +49(0)6721-1827991">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="rc_images/wsp_slideshow.js"></script>
+
+  <style>
+  /* ══════════════════════════════════════════
+     TOKENS  –  2026 Warm-Dark Palette
+  ══════════════════════════════════════════ */
+  :root {
+    --bg:          #0c0b09;
+    --bg-2:        #131109;
+    --bg-card:     #1a1812;
+    --bg-glass:    rgba(18,16,10,0.82);
+    --copper:      #bf7d3a;
+    --amber:       #d4a04a;
+    --gold:        #e8c278;
+    --gold-glow:   rgba(232,194,120,0.18);
+    --gold-border: rgba(232,194,120,0.2);
+    --cream:       #f4ede2;
+    --cream-dim:   #b8a998;
+    --muted:       #6e6254;
+    --nav-h:       70px;
+    --radius:      6px;
+  }
+
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--copper); border-radius: 3px; }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Type ── */
+  h1,h2,h3,h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-h {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+
+  .rule {
+    width: 48px; height: 1px;
+    background: linear-gradient(90deg, var(--amber), transparent);
+    margin: 1.2rem 0 2.4rem;
+  }
+
+  /* ── Layout ── */
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 7rem 0; }
+
+  /* ── Glow card ── */
+  .glow-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: var(--radius);
+    transition: border-color .35s, box-shadow .35s, transform .35s;
+  }
+  .glow-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 0 28px var(--gold-glow);
+    transform: translateY(-3px);
+  }
+
+  /* ═══════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    gap: 2rem;
+    transition: background .4s, backdrop-filter .4s, box-shadow .4s;
+  }
+  nav.scrolled {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 var(--gold-border);
+  }
+
+  /* Logo */
+  .nav-brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .nav-brand-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  /* Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* Booking pills */
+  .nav-book {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .book-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.42rem 1rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: background .25s, color .25s, box-shadow .25s;
+    white-space: nowrap;
+  }
+  .book-pill svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+  .book-pill-g {
+    background: rgba(232,194,120,0.12);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+  }
+  .book-pill-g:hover {
+    background: var(--amber);
+    color: var(--bg);
+    box-shadow: 0 0 18px rgba(212,160,74,0.4);
+  }
+  .book-pill-m {
+    background: rgba(191,125,58,0.12);
+    border: 1px solid rgba(191,125,58,0.25);
+    color: var(--copper);
+  }
+  .book-pill-m:hover {
+    background: var(--copper);
+    color: var(--bg);
+    box-shadow: 0 0 18px rgba(191,125,58,0.4);
+  }
+
+  /* Hamburger */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .nav-toggle span { width: 22px; height: 1.5px; background: var(--cream); display: block; transition: .3s; }
+
+  @media (max-width: 920px) {
+    .nav-links, .nav-book { display: none; }
+    .nav-toggle { display: flex; }
+    nav.open .nav-links,
+    nav.open .nav-book {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: rgba(12,11,9,0.97);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--gold-border);
+      gap: 1rem;
+    }
+    nav.open .nav-book { flex-direction: row; flex-wrap: wrap; border: none; padding-top: 0; }
+  }
+
+  /* ═══════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════ */
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('rc_images/001.jpg') center/cover no-repeat;
+    filter: brightness(0.28) saturate(0.5);
+    will-change: transform;
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(191,125,58,0.08) 0%, transparent 60%),
+                linear-gradient(to bottom, rgba(12,11,9,0.2) 0%, rgba(12,11,9,0.05) 45%, rgba(12,11,9,0.75) 85%, var(--bg) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 780px;
+    padding: calc(var(--nav-h) + 1rem) 2rem 0;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.8rem;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 12vw, 9.5rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+    margin-bottom: 1.4rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 2.8rem;
+  }
+
+  .hero-tour-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.6rem;
+    border: 1px solid var(--gold-border);
+    background: rgba(232,194,120,0.06);
+    color: var(--gold);
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* Hero Booking Strip */
+  .hero-book-strip {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-book-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition: all .25s;
+  }
+  .hero-book-btn-inner { text-align: left; }
+  .hero-book-btn-name { display: block; font-weight: 500; font-size: 0.85rem; color: var(--cream); margin-bottom: 1px; }
+  .hero-book-btn-info { display: block; font-size: 0.72rem; color: var(--cream-dim); }
+  .hero-book-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  .hbb-g {
+    background: rgba(232,194,120,0.09);
+    border: 1px solid var(--gold-border);
+  }
+  .hbb-g:hover {
+    background: rgba(232,194,120,0.18);
+    box-shadow: 0 0 22px var(--gold-glow);
+    transform: translateY(-2px);
+  }
+  .hbb-m {
+    background: rgba(191,125,58,0.09);
+    border: 1px solid rgba(191,125,58,0.22);
+  }
+  .hbb-m:hover {
+    background: rgba(191,125,58,0.18);
+    box-shadow: 0 0 22px rgba(191,125,58,0.18);
+    transform: translateY(-2px);
+  }
+  .hbb-g svg { color: var(--gold); }
+  .hbb-m svg { color: var(--copper); }
+
+  /* Hero booking card */
+  .hero-book-card {
+    display: inline-block;
+    padding: 1rem 1.8rem 1.1rem;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    background: rgba(12,11,9,0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .hero-book-card-label {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.7rem;
+    text-align: center;
+  }
+  .hero-book-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hbc-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    transition: background .2s;
+    line-height: 1.4;
+  }
+  .hbc-link:hover { background: rgba(232,194,120,0.1); }
+  .hbc-name { font-size: 0.8rem; font-weight: 500; color: var(--cream); }
+  .hbc-num  { font-size: 0.7rem; color: var(--gold); }
+  .hbc-sep  { color: var(--muted); font-size: 0.9rem; align-self: center; }
+  @media (max-width: 580px) {
+    .hbc-sep { display: none; }
+    .hero-book-row { gap: 0.25rem; }
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    animation: scrollPulse 2.5s infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px; height: 36px;
+    background: linear-gradient(var(--amber), transparent);
+  }
+  @keyframes scrollPulse {
+    0%,100% { transform: translateX(-50%) translateY(0); opacity: .7; }
+    50%      { transform: translateX(-50%) translateY(6px); opacity: 1; }
+  }
+
+  /* ═══════════════════════════════════════
+     ABOUT
+  ═══════════════════════════════════════ */
+  #about { background: var(--bg-2); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-logo-wrap {
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+  }
+  .about-logo-wrap img {
+    width: 100%;
+    border-radius: var(--radius);
+    filter: saturate(.7) brightness(.85);
+    transition: filter .4s;
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+  }
+  .about-logo-wrap:hover img { filter: saturate(1) brightness(1); }
+  .about-logo-frame {
+    position: absolute; inset: -10px;
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .about-text p {
+    color: var(--cream-dim);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 1.1rem;
+  }
+  .about-text p strong { color: var(--cream); font-weight: 500; }
+
+  .about-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 1.6rem;
+    border-left: 2px solid var(--amber);
+    padding-left: 1.2rem;
+  }
+
+  /* Tour History */
+  .tour-history {
+    display: flex;
+    gap: 0;
+    margin-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 2rem;
+  }
+  .tour-item {
+    flex: 1;
+    padding: 0 1.4rem;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .tour-item:first-child { padding-left: 0; }
+  .tour-item:last-child { border-right: none; }
+  .tour-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .tour-name {
+    font-size: 0.72rem;
+    color: var(--cream-dim);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-logo-wrap { position: relative; top: 0; max-width: 200px; margin: 0 auto; }
+    .tour-history { flex-wrap: wrap; gap: 1rem; }
+    .tour-item { flex: none; width: calc(50% - 0.5rem); border: none; padding: 0; }
+  }
+
+  /* ═══════════════════════════════════════
+     BAND MEMBERS
+  ═══════════════════════════════════════ */
+  #band { background: var(--bg); }
+
+  .band-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .member-card {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color .35s, box-shadow .35s, transform .35s;
+  }
+  .member-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 0 32px var(--gold-glow);
+    transform: translateY(-4px);
+  }
+
+  .member-photo {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+  }
+  .member-photo > div { width: 100%; height: 100%; }
+
+  .member-info { padding: 1.5rem 1.75rem 1.75rem; }
+
+  .member-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+  }
+  .member-role {
+    font-size: 0.73rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .member-contact-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .member-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.38rem 0.9rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: all .25s;
+  }
+  .member-contact-btn svg { width: 11px; height: 11px; }
+  .mcb-phone {
+    background: rgba(232,194,120,0.1);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+  }
+  .mcb-phone:hover { background: var(--amber); color: var(--bg); }
+  .mcb-mail {
+    background: rgba(191,125,58,0.1);
+    border: 1px solid rgba(191,125,58,0.22);
+    color: var(--copper);
+  }
+  .mcb-mail:hover { background: var(--copper); color: var(--bg); }
+
+  @media (max-width: 860px) {
+    .band-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  }
+
+  /* ═══════════════════════════════════════
+     VIDEOS
+  ═══════════════════════════════════════ */
+  #videos { background: var(--bg-2); }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .video-card {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color .3s, box-shadow .3s, transform .3s;
+  }
+  .video-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 0 24px var(--gold-glow);
+    transform: translateY(-2px);
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block; border: none;
+  }
+
+  /* ═══════════════════════════════════════
+     SETLIST
+  ═══════════════════════════════════════ */
+  #setlist {
+    background: var(--bg);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  .setlist-inner { max-width: 560px; margin: 0 auto; }
+  .setlist-inner .rule { margin: 1.2rem auto 2.2rem; }
+  .setlist-desc { color: var(--cream-dim); font-size: 0.98rem; margin-bottom: 2.5rem; }
+
+  .btn-amber {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2.6rem;
+    background: linear-gradient(135deg, var(--amber) 0%, var(--copper) 100%);
+    color: var(--bg);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity .25s, transform .25s, box-shadow .25s;
+    box-shadow: 0 4px 20px rgba(191,125,58,0.25);
+  }
+  .btn-amber:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(191,125,58,0.4);
+  }
+  .btn-amber svg { width: 15px; height: 15px; }
+
+  /* ═══════════════════════════════════════
+     GIGS
+  ═══════════════════════════════════════ */
+  #gigs { background: var(--bg-2); }
+
+  .gigs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gig-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color .3s, box-shadow .3s, transform .3s;
+  }
+  .gig-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 0 28px var(--gold-glow);
+    transform: translateY(-3px);
+  }
+  .gig-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(.85);
+    transition: filter .35s;
+  }
+  .gig-card:hover .gig-img { filter: brightness(1); }
+  .gig-body { padding: 1.75rem 2rem; flex: 1; }
+  .gig-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 0.15rem;
+    line-height: 1.1;
+  }
+  .gig-time {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+  }
+  .gig-venue { font-size: 1rem; font-weight: 500; color: var(--cream); margin-bottom: 0.2rem; }
+  .gig-detail { font-size: 0.85rem; color: var(--cream-dim); }
+
+  /* ═══════════════════════════════════════
+     GALLERY
+  ═══════════════════════════════════════ */
+  #gallery { background: var(--bg); padding-bottom: 0; }
+  #gallery .wrap { margin-bottom: 3rem; }
+
+  #slide_76dfdc81 {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 680px) { #slide_76dfdc81 { height: 260px; } }
+
+  /* ═══════════════════════════════════════
+     PRESS / PAST EVENTS
+  ═══════════════════════════════════════ */
+  #press { background: var(--bg-2); }
+
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .press-card {
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: border-color .3s;
+  }
+  .press-card:hover { border-color: var(--gold-border); }
+  .press-source {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+  }
+  .press-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .press-event { font-size: 0.8rem; color: var(--cream-dim); }
+
+  /* ═══════════════════════════════════════
+     REVIEWS
+  ═══════════════════════════════════════ */
+  #reviews { background: var(--bg); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .review-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color .3s, transform .3s, box-shadow .3s;
+  }
+  .review-card:hover {
+    border-color: var(--gold-border);
+    transform: translateY(-3px);
+    box-shadow: 0 0 24px var(--gold-glow);
+  }
+
+  .review-stars {
+    color: var(--amber);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .review-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .review-name  { font-size: 0.8rem; font-weight: 500; color: var(--cream); }
+  .review-event { font-size: 0.72rem; color: var(--amber); letter-spacing: 0.05em; }
+
+  @media (max-width: 900px) {
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ═══════════════════════════════════════
+     CONTACT / FOOTER
+  ═══════════════════════════════════════ */
+  #contact { background: var(--bg); padding: 7rem 0 4rem; }
+
+  /* Big booking CTA */
+  .book-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    background: rgba(232,194,120,0.04);
+    margin-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .book-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(212,160,74,0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .book-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .book-cta-sub {
+    font-size: 0.9rem;
+    color: var(--cream-dim);
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .book-cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .book-big-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 2rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    transition: all .25s;
+    min-width: 280px;
+    text-align: left;
+  }
+  .book-big-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+  .bbb-label { display: block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1px; }
+  .bbb-name  { display: block; font-size: 1rem; font-weight: 500; color: var(--cream); }
+  .bbb-info  { display: block; font-size: 0.73rem; color: var(--cream-dim); margin-top: 1px; }
+
+  .bbb-g {
+    background: rgba(232,194,120,0.08);
+    border: 1px solid var(--gold-border);
+  }
+  .bbb-g:hover {
+    background: rgba(232,194,120,0.16);
+    box-shadow: 0 0 28px var(--gold-glow);
+    transform: translateY(-2px);
+  }
+  .bbb-g svg { color: var(--gold); }
+  .bbb-g .bbb-label { color: var(--gold); }
+
+  .bbb-m {
+    background: rgba(191,125,58,0.08);
+    border: 1px solid rgba(191,125,58,0.22);
+  }
+  .bbb-m:hover {
+    background: rgba(191,125,58,0.16);
+    box-shadow: 0 0 28px rgba(191,125,58,0.18);
+    transform: translateY(-2px);
+  }
+  .bbb-m svg { color: var(--copper); }
+  .bbb-m .bbb-label { color: var(--copper); }
+
+  /* Footer grid */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .footer-brand-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .footer-brand p { font-size: 0.88rem; color: var(--muted); max-width: 280px; line-height: 1.7; }
+
+  .footer-col h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+    margin-bottom: 1.2rem;
+  }
+  .footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+  }
+  .footer-list a { transition: color .25s; }
+  .footer-list a:hover { color: var(--gold); }
+  .footer-list strong { color: var(--cream); display: block; margin-top: 0.4rem; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { color: var(--muted); transition: color .25s; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  @media (max-width: 860px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .book-big-btn { min-width: 0; width: 100%; }
+  }
+
+  /* ═══════════════════════════════════════
+     SCROLL REVEAL
+  ═══════════════════════════════════════ */
+  .r { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .r.v { opacity: 1; transform: none; }
+  .r.d1 { transition-delay: .1s; }
+  .r.d2 { transition-delay: .2s; }
+  .r.d3 { transition-delay: .3s; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">
+    <span class="nav-brand-name">Soul Buddha</span>
+    <span class="nav-brand-sub">finest pop-rock cover</span>
+  </a>
+  <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Band</a></li>
+    <li><a href="#band">Musiker</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#gigs">Termine</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#reviews">Bewertungen</a></li>
+  </ul>
+  <div class="nav-book">
+    <a href="#contact" class="book-pill book-pill-g">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 010 2.86 2 2 0 012 .68h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Soul Buddha buchen
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Rhein-Nahe &nbsp;·&nbsp; Coverband &nbsp;·&nbsp; Live seit den 80ern</span>
+    <h1 class="hero-title">Soul<br><em>Buddha</em></h1>
+    <p class="hero-tagline">finest pop-rock cover</p>
+    <div class="hero-tour-badge">
+      ✦ &nbsp; Schön und Lustig &nbsp;·&nbsp; Tour 2026 &nbsp; ✦
+    </div>
+    <!-- Booking card in Hero -->
+    <div class="hero-book-card">
+      <span class="hero-book-card-label">Jetzt buchen</span>
+      <div class="hero-book-row">
+        <a href="tel:+4967211827991" class="hbc-link">
+          <span class="hbc-name">Gerhard Rösch</span>
+          <span class="hbc-num">+49 (0)6721 – 182 79 91</span>
+        </a>
+        <span class="hbc-sep">·</span>
+        <a href="tel:+4915165141298" class="hbc-link">
+          <span class="hbc-name">Michel Rösch</span>
+          <span class="hbc-num">+49 (0)151 – 651 41 298</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-logo-wrap r">
+        <img src="rc_images/soul_buddha_logo.jpg" alt="Soul Buddha Logo">
+        <div class="about-logo-frame"></div>
+      </div>
+      <div class="about-text">
+        <span class="label r">Über die Band</span>
+        <h2 class="section-h r d1">Die Musik, die<br><em style="font-style:italic;color:var(--gold)">Sie bewegt</em></h2>
+        <div class="rule r d2"></div>
+        <p class="about-tagline r d2">„Mach das Beste zur Gewohnheit – Musik für Erwachsene."</p>
+        <p class="r d3">
+          Mit einer Live-Besetzung von drei Musikern begeistert <strong>Soul Buddha</strong> das Publikum
+          sowohl auf der kleinen als auch der großen Bühne. Aktuelle Top-40-Hits, Rock-Classics
+          und eine Vielzahl tanzbarer Songs aller Genres gehören zum Repertoire.
+        </p>
+        <p class="r">
+          Die Combo ist ein Garant für Ihr Event – ob Volksfest, Firmenjubiläum, Hochzeit,
+          Geburtstag oder Gartenparty. Musikalisch flexibel, professionell und mit viel guter Laune
+          wird die Musik jeder Situation angepasst.
+        </p>
+        <p class="r">
+          <strong>Gerhard Rösch</strong>, das kreative Zentrum der Band, blickt auf über vier Jahrzehnte
+          Bühnenerfahrung zurück: Mitgründer der Binger Bands <em>Logo</em> und <em>Florida</em>
+          in den frühen 1980ern, dann 26 Jahre als Keyboarder und Gitarrist bei
+          <strong>Les Patrons</strong> (1988–2014) – einer der bekanntesten Livebands der Rhein-Nahe-Region.
+          Seit 2014 lebt er seine musikalische Vision mit Soul Buddha.
+        </p>
+
+        <!-- Tour History Timeline -->
+        <div class="tour-history r">
+          <div class="tour-item">
+            <div class="tour-year">2022</div>
+            <div class="tour-name">Booster Tour</div>
+          </div>
+          <div class="tour-item">
+            <div class="tour-year">2023</div>
+            <div class="tour-name">In Dubio Prosecco Tour</div>
+          </div>
+          <div class="tour-item">
+            <div class="tour-year">2024</div>
+            <div class="tour-name">Performance ist kein Verbrechen Tour</div>
+          </div>
+          <div class="tour-item">
+            <div class="tour-year">2026</div>
+            <div class="tour-name">Schön und Lustig Tour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BAND MEMBERS ══════════ -->
+<section id="band">
+  <div class="wrap">
+    <span class="label r">Die Musiker</span>
+    <h2 class="section-h r d1">Drei. Ein Klang.</h2>
+    <div class="rule r d2"></div>
+    <div class="band-grid">
+
+      <!-- Gerhard -->
+      <div class="member-card r d1">
+        <div class="member-photo">
+          <div id="carousel_2d65da9e">
+            <div id="carousel_2d65da9e_page1"><br/><br/><br/><br/></div>
+            <div id="carousel_2d65da9e_page2"><br/><br/><br/><br/></div>
+            <div id="carousel_2d65da9e_page3"><br/><br/><br/><br/></div>
+            <div id="carousel_2d65da9e_page4"><br/><br/><br/><br/></div>
+            <div id="carousel_2d65da9e_page5"><br/><br/><br/><br/></div>
+            <div id="carousel_2d65da9e_page6"><br/><br/><br/><br/></div>
+            <script>
+              new wsp_slideshow('carousel_2d65da9e',
+                ['rc_images/sbg1.jpg','rc_images/sbg2.jpg','rc_images/sbg3.jpg','rc_images/sbg4.jpg','rc_images/sbg5.jpg','rc_images/sbg6.jpg'],
+                'slide',5000,900,'cover',null,'center',
+                {buttonSize:28,buttonFontSize:13,buttonBackgroundColor:"rgba(12,11,9,0.65)",buttonHoverBackgroundColor:"rgba(12,11,9,0.9)",buttonColor:"#e8c278",buttonHoverColor:"#e8c278",buttonMargin:8,buttonBorderRadius:50,buttonCharacterLeft:"&#8592;",buttonCharacterRight:"&#8594;",buttonFontFamily:"DM Sans,sans-serif"},
+                {startPage:1,enablePageIndicator:true,pageIndicatorPadding:8,pageIndicatorButtonWidth:7,pageIndicatorButtonHeight:7,pageIndicatorButtonPadding:3,pageIndicatorButtonColor:"#4D4D4D",pageIndicatorButtonActiveColor:"#e8c278",pageIndicatorButtonBorderRadius:4,pageIndicatorButtonBorderWidth:0,pageIndicatorButtonBorderColor:"#2F2F2F",pageIndicatorBackColor:"rgba(12,11,9,0.5)",pageIndicatorBackBorderRadius:20,pageIndicatorBackMargin:6});
+            </script>
+          </div>
+        </div>
+        <div class="member-info">
+          <h3 class="member-name">Gerhard</h3>
+          <p class="member-role">Keyboards &middot; Gitarren &middot; Gesang</p>
+          <p style="font-size:.82rem;color:var(--cream-dim);line-height:1.6">
+            Über 40 Jahre Bühnenerfahrung. Früher bei Les Patrons, Logo und Florida.
+            Musikalisches Herzstück von Soul Buddha.
+          </p>
+          <div class="member-contact-row">
+            <a href="tel:+4967211827991" class="member-contact-btn mcb-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 010 2.86 2 2 0 012 .68h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Anrufen
+            </a>
+            <a href="mailto:info@soul-buddha.de" class="member-contact-btn mcb-mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              E-Mail
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maja -->
+      <div class="member-card r d2">
+        <div class="member-photo">
+          <div id="carousel_29c6944a">
+            <div id="carousel_29c6944a_page1"><br/><br/><br/><br/></div>
+            <div id="carousel_29c6944a_page2"><br/><br/><br/><br/></div>
+            <div id="carousel_29c6944a_page3"><br/><br/><br/><br/></div>
+            <div id="carousel_29c6944a_page4"><br/><br/><br/><br/></div>
+            <div id="carousel_29c6944a_page5"><br/><br/><br/><br/></div>
+            <script>
+              new wsp_slideshow('carousel_29c6944a',
+                ['rc_images/sbmk1.jpg','rc_images/sbmk2.jpg','rc_images/sbmk3.jpg','rc_images/sbmk4.jpg','rc_images/sbmk5.jpg'],
+                'slide',5000,900,'cover',null,'center',
+                {buttonSize:28,buttonFontSize:13,buttonBackgroundColor:"rgba(12,11,9,0.65)",buttonHoverBackgroundColor:"rgba(12,11,9,0.9)",buttonColor:"#e8c278",buttonHoverColor:"#e8c278",buttonMargin:8,buttonBorderRadius:50,buttonCharacterLeft:"&#8592;",buttonCharacterRight:"&#8594;",buttonFontFamily:"DM Sans,sans-serif"},
+                {startPage:1,enablePageIndicator:true,pageIndicatorPadding:8,pageIndicatorButtonWidth:7,pageIndicatorButtonHeight:7,pageIndicatorButtonPadding:3,pageIndicatorButtonColor:"#4D4D4D",pageIndicatorButtonActiveColor:"#e8c278",pageIndicatorButtonBorderRadius:4,pageIndicatorButtonBorderWidth:0,pageIndicatorButtonBorderColor:"#2F2F2F",pageIndicatorBackColor:"rgba(12,11,9,0.5)",pageIndicatorBackBorderRadius:20,pageIndicatorBackMargin:6});
+            </script>
+          </div>
+        </div>
+        <div class="member-info">
+          <h3 class="member-name">Maja</h3>
+          <p class="member-role">Gesang &middot; Percussion</p>
+          <p style="font-size:.82rem;color:var(--cream-dim);line-height:1.6">
+            Charismatische Frontfrau mit einer Stimme, die den Raum füllt –
+            von Balladen bis Bühnenfeuer.
+          </p>
+        </div>
+      </div>
+
+      <!-- Michel -->
+      <div class="member-card r d3">
+        <div class="member-photo">
+          <div id="carousel_491a62e6">
+            <div id="carousel_491a62e6_page1"><br/><br/><br/><br/></div>
+            <div id="carousel_491a62e6_page2"><br/><br/><br/><br/></div>
+            <div id="carousel_491a62e6_page3"><br/><br/><br/><br/></div>
+            <div id="carousel_491a62e6_page4"><br/><br/><br/><br/></div>
+            <div id="carousel_491a62e6_page5"><br/><br/><br/><br/></div>
+            <script>
+              new wsp_slideshow('carousel_491a62e6',
+                ['rc_images/sbme1.jpg','rc_images/sbme2.jpg','rc_images/sbme3.jpg','rc_images/sbme4.jpg','rc_images/sbme5.jpg'],
+                'slide',5000,900,'cover',null,'center',
+                {buttonSize:28,buttonFontSize:13,buttonBackgroundColor:"rgba(12,11,9,0.65)",buttonHoverBackgroundColor:"rgba(12,11,9,0.9)",buttonColor:"#e8c278",buttonHoverColor:"#e8c278",buttonMargin:8,buttonBorderRadius:50,buttonCharacterLeft:"&#8592;",buttonCharacterRight:"&#8594;",buttonFontFamily:"DM Sans,sans-serif"},
+                {startPage:1,enablePageIndicator:true,pageIndicatorPadding:8,pageIndicatorButtonWidth:7,pageIndicatorButtonHeight:7,pageIndicatorButtonPadding:3,pageIndicatorButtonColor:"#4D4D4D",pageIndicatorButtonActiveColor:"#e8c278",pageIndicatorButtonBorderRadius:4,pageIndicatorButtonBorderWidth:0,pageIndicatorButtonBorderColor:"#2F2F2F",pageIndicatorBackColor:"rgba(12,11,9,0.5)",pageIndicatorBackBorderRadius:20,pageIndicatorBackMargin:6});
+            </script>
+          </div>
+        </div>
+        <div class="member-info">
+          <h3 class="member-name">Michel</h3>
+          <p class="member-role">Drums &middot; Git./Ukulele &middot; Bluesharp &middot; Gesang</p>
+          <p style="font-size:.82rem;color:var(--cream-dim);line-height:1.6">
+            Das rhythmische Fundament der Band – Multiinstrumentalist mit
+            einem Gespür für jede musikalische Situation.
+          </p>
+          <div class="member-contact-row">
+            <a href="tel:+4915165141298" class="member-contact-btn mcb-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 010 2.86 2 2 0 012 .68h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Anrufen
+            </a>
+            <a href="mailto:michel@soul-buddha.de" class="member-contact-btn mcb-mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              E-Mail
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VIDEOS ══════════ -->
+<section id="videos">
+  <div class="wrap">
+    <span class="label r">Live &amp; On Stage</span>
+    <h2 class="section-h r d1">Videos</h2>
+    <div class="rule r d2"></div>
+    <div class="videos-grid">
+      <div class="video-card r d1"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/XEfti0VGFEw?rel=0&modestbranding=1" title="Bella Napoli – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d2"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/D2IWuEbHlVY?rel=0&modestbranding=1" title="Ponte di Rialto – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d3"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/XOORzUFEstM?rel=0&modestbranding=1" title="Velocita – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d1"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/uNQmyvC5YZs?rel=0&modestbranding=1" title="Shame on You – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d2"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ftHbYk38Ig0?rel=0&modestbranding=1" title="Heavy Cross – Soul Buddha and Friends" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d3"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/G0dgkJGpnrY?rel=0&modestbranding=1" title="Maid of Orleans – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d1"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/iMKTI7bXKYE?rel=0&modestbranding=1" title="Help Me Through the Night – Soul Buddha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="video-card r d2"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/JAh_yxg444E?rel=0&modestbranding=1" title="I Wish / Superstition – Soul Buddha and Friends" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SETLIST ══════════ -->
+<section id="setlist">
+  <div class="wrap">
+    <div class="setlist-inner">
+      <span class="label r">Repertoire</span>
+      <h2 class="section-h r d1">Songliste 2026</h2>
+      <div class="rule"></div>
+      <p class="setlist-desc r d2">
+        Von aktuellen Chart-Hits bis zu zeitlosen Rock-Classics – vier Jahrzehnte Musikgeschichte,
+        live gespielt und perfekt auf Ihr Event abgestimmt.
+      </p>
+      <a href="rc_images/songliste_2026.pdf" target="_blank" class="btn-amber r d3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        Songliste herunterladen (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GIGS ══════════ -->
+<section id="gigs">
+  <div class="wrap">
+    <span class="label r">Kalender</span>
+    <h2 class="section-h r d1">Termine 2026</h2>
+    <div class="rule r d2"></div>
+    <div class="gigs-grid">
+      <div class="gig-card r d1">
+        <a href="rc_images/biebernheim_quetschekerb_2026_sm.jpg" target="_blank">
+          <img class="gig-img" src="rc_images/biebernheim_quetschekerb_2026_sm1.jpg" alt="Quetschekerb Biebernheim">
+        </a>
+        <div class="gig-body">
+          <div class="gig-date">04. September 2026</div>
+          <div class="gig-time">Beginn: 20:00 Uhr</div>
+          <div class="gig-venue">St. Goar – Biebernheim</div>
+          <div class="gig-detail">Quetschekerb &middot; Festzelt</div>
+        </div>
+      </div>
+      <div class="gig-card r d2">
+        <a href="rc_images/oberwesel_weinmarkt_2026_sm.jpg" target="_blank">
+          <img class="gig-img" src="rc_images/oberwesel_weinmarkt_2026_sm1.jpg" alt="Weinmarkt Oberwesel">
+        </a>
+        <div class="gig-body">
+          <div class="gig-date">14. September 2026</div>
+          <div class="gig-time">Ab 17:00 Uhr</div>
+          <div class="gig-venue">Oberwesel &middot; Weinmarkt</div>
+          <div class="gig-detail">Die besten Hits der letzten 50 Jahre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PRESS / EVENTS ══════════ -->
+<section id="press">
+  <div class="wrap">
+    <span class="label r">Auftritte &amp; Presse</span>
+    <h2 class="section-h r d1">Bekannt aus der Region</h2>
+    <div class="rule r d2"></div>
+    <div class="press-grid">
+      <div class="press-card r d1">
+        <div class="press-source">Kulturhaus Oberwesel · April 2026</div>
+        <p class="press-quote">„Kino Vino" mit Band Soul Buddha – Live-Musik, Wein &amp; Überraschungsfilm</p>
+        <div class="press-event">Kulturveranstaltung · Kulturhaus Oberwesel</div>
+      </div>
+      <div class="press-card r d2">
+        <div class="press-source">Sunset Camp 2023</div>
+        <p class="press-quote">Open-Air-Auftritt beim Sunset Camp – Stimmung bis in die Nacht</p>
+        <div class="press-event">Open Air Festival · Rhein-Nahe</div>
+      </div>
+      <div class="press-card r d3">
+        <div class="press-source">Oberweseler Weinmarkt</div>
+        <p class="press-quote">Jahrelang ein fester Bestandteil des traditionsreichen Weinmarkts an der romantischen Rheinseite</p>
+        <div class="press-event">Traditionelles Weinfest · Mittelrhein</div>
+      </div>
+      <div class="press-card r d1">
+        <div class="press-source">Romantischer Rhein · Tourismus</div>
+        <p class="press-quote">Soul Buddha – Tanz, Cover &amp; Partyband auf Spitzenniveau, empfohlen für Events im Rheintal</p>
+        <div class="press-event">romantischer-rhein.de</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section id="gallery">
+  <div class="wrap">
+    <span class="label r">Impressionen</span>
+    <h2 class="section-h r d1">Galerie</h2>
+    <div class="rule r d2"></div>
+  </div>
+  <div id="slide_76dfdc81">
+    <script>
+      new wsp_slideshow('slide_76dfdc81',
+        ['rc_images/sb_01.jpg','rc_images/sb1_01.jpg','rc_images/sb1_02.jpg','rc_images/sb1_03.jpg','rc_images/sb1_04.jpg','rc_images/sb1_05.jpg','rc_images/sb1_06.jpg','rc_images/sb1_07.jpg','rc_images/sb1_08.jpg','rc_images/sb1_09.jpg','rc_images/sb1_10.jpg','rc_images/sb1_11.jpg','rc_images/sb1_12.jpg','rc_images/sb1_13.jpg','rc_images/sb1_14.jpg','rc_images/sb1_15.jpg','rc_images/sb1_16.jpg','rc_images/sb1_17.jpg','rc_images/sb1_18.jpg','rc_images/sb1_19.jpg','rc_images/sb1_20.jpg','rc_images/sb1_21.jpg','rc_images/sb1_22.jpg','rc_images/sb1_23.jpg','rc_images/sb1_24.jpg','rc_images/sb1_25.jpg','rc_images/sb1_26.jpg','rc_images/sb1_27.jpg','rc_images/sb_02.jpg','rc_images/sb_03.jpg','rc_images/sb_04.jpg','rc_images/sb_05.jpg','rc_images/sb_06.jpg','rc_images/sb_07.jpg','rc_images/sb_08.jpg','rc_images/sb_09.jpg','rc_images/sb_10.jpg','rc_images/sb_11.jpg','rc_images/sb_12.jpg','rc_images/sb_13.jpg','rc_images/sunset_camp_2023_auswahl___204.jpg','rc_images/sunset_camp_2023_auswahl___209.jpg','rc_images/sunset_camp_2023_auswahl___212.jpg','rc_images/sunset_camp_2023_auswahl___217.jpg','rc_images/sunset_camp_2023_auswahl___218.jpg','rc_images/sunset_camp_2023_auswahl___220.jpg','rc_images/sunset_camp_2023_auswahl___222.jpg','rc_images/sunset_camp_2023_auswahl___223.jpg','rc_images/sunset_camp_2023_auswahl___224.jpg','rc_images/sunset_camp_2023_auswahl___233.jpg','rc_images/sunset_camp_2023_auswahl___234.jpg','rc_images/sunset_camp_2023_auswahl___237.jpg','rc_images/sunset_camp_2023_auswahl___246.jpg'],
+        'fade',3500,1500,'cover',null,'center',null,
+        {enablePageIndicator:true,pageIndicatorPadding:10,pageIndicatorButtonWidth:8,pageIndicatorButtonHeight:8,pageIndicatorButtonPadding:4,pageIndicatorButtonColor:"#4D4D4D",pageIndicatorButtonActiveColor:"#e8c278",pageIndicatorButtonBorderRadius:4,pageIndicatorButtonBorderWidth:0,pageIndicatorButtonBorderColor:"#2F2F2F",pageIndicatorBackColor:"rgba(12,11,9,0.55)",pageIndicatorBackBorderRadius:20,pageIndicatorBackMargin:7});
+    </script>
+  </div>
+</section>
+
+<!-- ══════════ REVIEWS ══════════ -->
+<section id="reviews">
+  <div class="wrap">
+    <span class="label r">Stimmen zum Konzert</span>
+    <h2 class="section-h r d1">Was das Publikum sagt</h2>
+    <div class="rule r d2"></div>
+    <div class="reviews-grid">
+
+      <div class="review-card r d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Absolut umwerfend! Der Weinmarkt in Oberwesel war noch nie so stimmungsvoll. Soul Buddha hat den ganzen Platz zum Tanzen gebracht – von der ersten bis zur letzten Note."</p>
+        <div class="review-meta">
+          <span class="review-name">Thomas K.</span>
+          <span class="review-event">Oberweseler Weinmarkt 2024</span>
+        </div>
+      </div>
+
+      <div class="review-card r d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Wir haben Soul Buddha für unsere Firmenfeier gebucht und waren begeistert. Die Band liest dem Publikum jeden Wunsch von den Augen ab – professionell, mitreißend und einfach Spaß."</p>
+        <div class="review-meta">
+          <span class="review-name">Sandra M.</span>
+          <span class="review-event">Firmenjubiläum · Bingen 2024</span>
+        </div>
+      </div>
+
+      <div class="review-card r d3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Beim Quetschekerb in Biebernheim war die Stimmung dank Soul Buddha auf einem anderen Level. Die drei Musiker klingen wie eine ganze Bigband – unglaublich, was die rausholen!"</p>
+        <div class="review-meta">
+          <span class="review-name">Markus &amp; Petra R.</span>
+          <span class="review-event">Quetschekerb Biebernheim 2023</span>
+        </div>
+      </div>
+
+      <div class="review-card r d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Kino Vino im Kulturhaus Oberwesel – der Abend hat mich komplett überrascht. Soul Buddha spielte eine Stunde lang und ich wollte gar nicht, dass der Film anfängt."</p>
+        <div class="review-meta">
+          <span class="review-name">Julia W.</span>
+          <span class="review-event">Kino Vino · Kulturhaus Oberwesel 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card r d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Unsere Hochzeit war perfekt – vor allem wegen der Band. Maja hat uns mit ihrer Stimme zu Tränen gerührt, und beim Partyteil war kein einziger Gast mehr auf seinem Platz."</p>
+        <div class="review-meta">
+          <span class="review-name">Lea &amp; Jonas F.</span>
+          <span class="review-event">Hochzeitsfeier · Rhein-Nahe 2024</span>
+        </div>
+      </div>
+
+      <div class="review-card r d3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">„Beim Sunset Camp 2023 haben die drei die Bühne gerockt. Perfektes Zusammenspiel, tolle Energie und ein Repertoire, das wirklich jeden anspricht. Sehr gerne wieder!"</p>
+        <div class="review-meta">
+          <span class="review-name">Daniel H.</span>
+          <span class="review-event">Sunset Camp 2023</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="wrap">
+
+    <!-- Big CTA -->
+    <div class="book-cta r">
+      <h2 class="book-cta-title">Soul Buddha buchen</h2>
+      <p class="book-cta-sub">
+        Für Volksfeste, Firmenfeiern, Hochzeiten, Geburtstage und Gartenpartys.
+        Sprechen Sie einfach einen der beiden an – Sie erreichen die ganze Band.
+      </p>
+      <div class="book-cta-btns">
+        <a href="tel:+4967211827991" class="book-big-btn bbb-g">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 010 2.86 2 2 0 012 .68h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <span class="bbb-label">Gerhard Rösch anrufen</span>
+            <span class="bbb-name">+49 (0)6721 – 182 79 91</span>
+            <span class="bbb-info">info@soul-buddha.de</span>
+          </div>
+        </a>
+        <a href="tel:+4915165141298" class="book-big-btn bbb-m">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 010 2.86 2 2 0 012 .68h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <span class="bbb-label">Michel Rösch anrufen</span>
+            <span class="bbb-name">+49 (0)151 – 651 41 298</span>
+            <span class="bbb-info">michel@soul-buddha.de</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-grid">
+      <div class="footer-brand r">
+        <div class="footer-brand-name">Soul Buddha</div>
+        <div class="footer-brand-tagline">finest pop-rock cover · Rhein-Nahe</div>
+        <p>Eine der beliebtesten Coverbands der Metropolregion Rhein-Main. Professionell, flexibel und mit viel guter Laune – seit den frühen 1980ern auf der Bühne.</p>
+      </div>
+      <div class="footer-col r d1">
+        <h5>Kontakt</h5>
+        <ul class="footer-list">
+          <li><strong>Gerhard Rösch</strong></li>
+          <li><a href="tel:+4967211827991">+49 (0)6721 – 182 79 91</a></li>
+          <li><a href="mailto:info@soul-buddha.de">info@soul-buddha.de</a></li>
+          <li><strong>Michel Rösch</strong></li>
+          <li><a href="tel:+4915165141298">+49 (0)151 – 651 41 298</a></li>
+          <li><a href="mailto:michel@soul-buddha.de">michel@soul-buddha.de</a></li>
+        </ul>
+      </div>
+      <div class="footer-col r d2">
+        <h5>Links</h5>
+        <ul class="footer-list">
+          <li><a href="rc_images/songliste_2026.pdf" target="_blank">Songliste 2026 (PDF)</a></li>
+          <li><a href="kosten" target="_blank">Kosten &amp; Preise</a></li>
+          <li><a href="https://www.facebook.com/soulbuddha/" target="_blank">Facebook</a></li>
+          <li>Instagram</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Soul Buddha &nbsp;&middot;&nbsp; Alle Rechte vorbehalten</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+
+  // Mobile toggle
+  document.getElementById('navToggle').addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Hero parallax
+  const heroBg = document.getElementById('heroBg');
+  addEventListener('scroll', () => {
+    if (scrollY < innerHeight) heroBg.style.transform = `translateY(${scrollY * 0.22}px)`;
+  }, {passive:true});
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
